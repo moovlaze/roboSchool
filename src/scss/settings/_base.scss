@@ -1,0 +1,76 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	overflow-x: hidden;
+	&_lock {
+		overflow-y: hidden;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+button {
+	color: inherit;
+	background-color: transparent;
+}
+
+ul,
+li {
+	list-style: none;
+}
+
+.wrapper {
+	position: relative;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	font-family: $font-family;
+	font-weight: 400;
+}
+.main {
+	flex-grow: 1;
+}
+
+[class*="__container"] {
+	max-width: 1200px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+[class*="__container-full"] {
+	max-width: 1750px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
