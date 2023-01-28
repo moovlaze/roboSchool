@@ -1,0 +1,12 @@
+.item-about {
+	&__count {
+		font-weight: 600;
+		font-size: 70px;
+		line-height: 160%;
+		color: $color-alizarin-crimson;
+	}
+
+	&__desc {
+		color: $color-text;
+	}
+}
