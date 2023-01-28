@@ -1,0 +1,16 @@
+.btn {
+	display: inline-block;
+
+	padding: 25px 15px;
+	text-align: center;
+	font-size: 18px;
+	line-height: 160%;
+	border-radius: 5px;
+	color: #fff;
+	background-color: $color-alizarin-crimson;
+	transition: all 0.2s ease;
+	&:focus,
+	&:hover {
+		background-color: darken($color-alizarin-crimson, 15);
+	}
+}
