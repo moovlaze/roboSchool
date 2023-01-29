@@ -1,0 +1,23 @@
+.rates {
+	padding-top: 0;
+	&__container {
+	}
+
+	&__title {
+	}
+
+	&__wrapper {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+		gap: 40px;
+		@media (max-width: 424.98px) {
+			grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+		}
+	}
+
+	&__col {
+	}
+
+	&__item {
+	}
+}
