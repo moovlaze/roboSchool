@@ -5,8 +5,6 @@ const swiper = new Swiper(".trainers__slider", {
 	modules: [Navigation, Scrollbar],
 	slidesPerView: "auto",
 	spaceBetween: 40,
-	// slidesPerView: 1,
-	// spaceBetween: 20,
 	scrollbar: {
 		el: ".trainers__scrollbar",
 		draggable: true,
@@ -15,12 +13,6 @@ const swiper = new Swiper(".trainers__slider", {
 		nextEl: ".trainers__arrow_next",
 		prevEl: ".trainers__arrow_prev",
 	},
-	// breakpoints: {
-	// 	575.98: {
-	// 		slidesPerView: 4,
-	// 		spaceBetween: 40,
-	// 	},
-	// },
 });
 
 functions.openBurgerMenu();
