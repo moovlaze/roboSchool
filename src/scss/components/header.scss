@@ -17,6 +17,14 @@
 		}
 	}
 
+	&__logo {
+		@media (max-width: 374.98px) {
+			align-self: flex-end;
+			width: 136px;
+			height: 29px;
+		}
+	}
+
 	&__tel {
 		font-weight: 600;
 		font-size: 30px;
