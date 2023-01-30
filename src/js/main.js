@@ -16,3 +16,4 @@ const swiper = new Swiper(".trainers__slider", {
 });
 
 functions.openBurgerMenu();
+functions.scrollToSections();
