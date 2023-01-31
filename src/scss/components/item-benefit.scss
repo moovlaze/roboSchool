@@ -14,13 +14,21 @@
 
 	&__box {
 		position: relative;
-		display: inline-block;
+		// display: inline-block;
+		display: flex;
+		align-items: flex-start;
+	}
+
+	&__ico {
 	}
 
 	&__tooltip {
-		position: absolute;
-		right: -35px;
-		top: 0;
+	}
+}
+
+.tooltip {
+	margin-left: 10px;
+	&__ico {
 		width: 24px;
 		height: 24px;
 		display: flex;
@@ -28,5 +36,24 @@
 		justify-content: center;
 		border-radius: 50%;
 		background-color: rgba(20, 16, 36, 0.08);
+	}
+	&__text {
+		position: absolute;
+		visibility: hidden;
+		opacity: 0;
+		width: 251px;
+		padding: 15px;
+		font-size: 16px;
+		line-height: 160%;
+		border-radius: 5px;
+		background-color: #fff;
+		box-shadow: 0px 2px 8px rgba(20, 16, 36, 0.1);
+		transition: all 0.3s ease;
+	}
+	&:hover {
+		.tooltip__text {
+			visibility: visible;
+			opacity: 1;
+		}
 	}
 }
