@@ -6,6 +6,7 @@ const swiper = new Swiper(".trainers__slider", {
 	modules: [Navigation, Scrollbar],
 	slidesPerView: "auto",
 	spaceBetween: 40,
+	grabCursor: true,
 	scrollbar: {
 		el: ".trainers__scrollbar",
 		draggable: true,
