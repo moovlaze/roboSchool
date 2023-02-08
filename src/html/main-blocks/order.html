@@ -5,15 +5,18 @@
       <p class="order__desc">Акция действительна до 10 марта 2022 года</p>
     </div>
     <div class="order__right">
-      <form action="#!" class="order__form form">
+      <form action="#!" class="order__form form" id="form">
         <label class="form__label">
-          <input type="text" class="form__input" name="userName" placeholder="Имя">
+          <input type="text" data-required="true" data-min-length="2" class="form__input" name="userName"
+            placeholder="Имя">
         </label>
         <label class="form__label">
-          <input type="tel" class="form__input" name="userPhone" placeholder="Телефон">
+          <input type="tel" data-required="true" data-min-length="8" class="form__input" name="userPhone"
+            placeholder="+7(999)999-99-99">
         </label>
         <label class="form__label">
-          <input type="email" class="form__input" name="userEmail" placeholder="E-mail">
+          <input type="email" data-required="true" data-min-length="4" class="form__input" name="userEmail"
+            placeholder="E-mail">
         </label>
         <button class="form__btn" type="submit">Оформить заявку</button>
       </form>

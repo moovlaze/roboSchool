@@ -39,4 +39,5 @@ functions.openBurgerMenu();
 functions.scrollToSections();
 functions.openPopup();
 functions.tabs();
+functions.formVaildate();
 tooltip();

@@ -121,3 +121,71 @@ export const tabs = () => {
 		btn.addEventListener("click", selectBtn);
 	});
 };
+
+export const formVaildate = () => {
+	const form = document.querySelector("#form");
+
+	const validation = (form) => {
+		const allInputs = form.querySelectorAll(".form__input");
+		let result = true;
+
+		const removeError = (input) => {
+			const parent = input.parentNode;
+
+			if (parent.classList.contains("error")) {
+				parent.querySelector(".form__label-text").remove();
+				parent.classList.remove("error");
+			}
+		};
+
+		const createError = (input, errorText) => {
+			const parent = input.parentNode;
+			const errorEl = document.createElement("span");
+
+			errorEl.classList.add("form__label-text");
+			errorEl.textContent = errorText;
+
+			parent.append(errorEl);
+			parent.classList.add("error");
+		};
+
+		allInputs.forEach((input) => {
+			removeError(input);
+
+			if (input.dataset.minLength) {
+				if (input.value.length < input.dataset.minLength) {
+					result = false;
+					removeError(input);
+					createError(
+						input,
+						`Кол-во символов меньше ${input.dataset.minLength}`
+					);
+				}
+			}
+
+			if (input.dataset.required) {
+				if (input.value === "") {
+					result = false;
+					removeError(input);
+					createError(input, "поле не заполнено!");
+				}
+			}
+		});
+
+		return result;
+	};
+
+	form.addEventListener("submit", (e) => {
+		e.preventDefault();
+
+		if (validation(form)) {
+			alert("Заявка отправлена");
+		} else {
+			alert("Введите данные снова!");
+		}
+
+		form.querySelectorAll(".form__input").forEach((input) => {
+			input.value = "";
+		});
+	});
+};
