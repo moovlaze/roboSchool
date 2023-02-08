@@ -1,6 +1,7 @@
 import * as functions from "./modules/functions.js";
 import Swiper, { Navigation, Scrollbar } from "swiper";
 import { createPopper } from "@popperjs/core";
+import simplebar from "simplebar";
 
 const swiper = new Swiper(".trainers__slider", {
 	modules: [Navigation, Scrollbar],
@@ -36,4 +37,6 @@ const tooltip = () => {
 
 functions.openBurgerMenu();
 functions.scrollToSections();
+functions.openPopup();
+functions.tabs();
 tooltip();

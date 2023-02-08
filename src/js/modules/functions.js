@@ -60,3 +60,64 @@ export const scrollToSections = () => {
 	getIdSections();
 	startScroll();
 };
+
+export const openPopup = () => {
+	const page = document.querySelector(".page");
+	const openPopup = document.querySelectorAll(".item-trainers__btn");
+	const popup = document.querySelector(".popup");
+	const popupContent = popup.querySelector(".popup__content");
+
+	openPopup.forEach((item) => {
+		item.addEventListener("click", () => {
+			page.classList.add("page_lock");
+			popup.classList.add("popup_active");
+			popupContent.classList.add("popup__content_active");
+		});
+	});
+
+	popup.addEventListener("click", (e) => {
+		if (
+			e.target.closest(".popup__close") ||
+			!e.target.closest(".popup__content")
+		) {
+			page.classList.remove("page_lock");
+			popup.classList.remove("popup_active");
+			popupContent.classList.remove("popup__content_active");
+		}
+	});
+};
+
+export const tabs = () => {
+	const tabsParents = document.querySelectorAll("[data-tabs]");
+	let tabsBtns;
+	let tabsContent;
+
+	tabsParents.forEach((item) => {
+		tabsBtns = item.querySelectorAll("[data-btn]");
+		tabsContent = item.querySelectorAll("[data-content]");
+	});
+
+	const selectBtn = (e) => {
+		const btnName = e.target.dataset.btn;
+		tabsBtns.forEach((el) => {
+			el.classList.remove("active");
+		});
+
+		e.target.classList.add("active");
+		selectContent(btnName);
+	};
+
+	const selectContent = (btnName) => {
+		tabsContent.forEach((item) => {
+			if (item.dataset.content === btnName) {
+				item.classList.add("active");
+			} else {
+				item.classList.remove("active");
+			}
+		});
+	};
+
+	tabsBtns.forEach((btn) => {
+		btn.addEventListener("click", selectBtn);
+	});
+};
